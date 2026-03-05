@@ -40,6 +40,7 @@ class Impact_Detail(Impact_DetailTemplate):
   ####
   def init_impact_card(self):
     self.init_impact_plot()
+    self.init_impact_map()
     
   def init_impact_plot(self):
     # Daten für das Diagramm vorbereiten
@@ -66,20 +67,43 @@ class Impact_Detail(Impact_DetailTemplate):
     }
 
   def init_impact_map(self):
-    self.impact_map.map_data.add(GoogleMap.Data.Feature(
-      geometry=GoogleMap.Data.Point(
-        GoogleMap.LatLng(self.item['latitude'],self.item['longitude']))))
+    pos = GoogleMap.LatLng(self.item['latitude'],self.item['longitude'])
+    self.impact_map.center = pos
+    self.impact_map.zoom = 13
 
-    self.impact_map.map_data.style = GoogleMap.Data.StyleOptions(
-      icon=GoogleMap.Symbol(
-        path=GoogleMap.SymbolPath.CIRCLE,
-        scale=30,
-        fill_color='red',
-        fill_opacity=0.3,
-        stroke_opacity=1,
-        stroke_weight=1
-      )
+    death_circle = GoogleMap.Circle(
+      center=pos,
+      radius=300,
+      fill_color="red",
+      fill_opacity=0.4,
+      stroke_color="red",
+      stroke_opacity=1,
+      stroke_weight=1
     )
+
+    heavy_injury_circle = GoogleMap.Circle(
+      center=pos,
+      radius=600,
+      fill_color="orange",
+      fill_opacity=0.4,
+      stroke_color="orange",
+      stroke_opacity=1,
+      stroke_weight=1
+    )
+
+    light_injury_circle = GoogleMap.Circle(
+      center=pos,
+      radius=1000,
+      fill_color="yellow",
+      fill_opacity=0.4,
+      stroke_color="yellow",
+      stroke_opacity=1,
+      stroke_weight=1
+    )
+
+    self.impact_map.add_component(light_injury_circle)
+    self.impact_map.add_component(heavy_injury_circle)
+    self.impact_map.add_component(death_circle)
 
   ####
   #### ------ impact

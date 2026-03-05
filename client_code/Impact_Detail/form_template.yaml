@@ -19,12 +19,8 @@ components:
       type: Label
     - layout_properties: {grid_position: 'NBDKZW,OMTYWP'}
       name: bomb_label
-      properties: {}
+      properties: {text: ''}
       type: Label
-    - layout_properties: {grid_position: 'WMQXNI,EVINAM'}
-      name: bomb_plot
-      properties: {height: 215}
-      type: Plot
     layout_properties: {grid_position: 'OVFKXU,EWTSWW EFRLOS,VMJFOU'}
     name: bomb_card
     properties: {role: card}
