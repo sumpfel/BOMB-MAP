@@ -17,14 +17,14 @@ components:
       name: bomb_headline
       properties: {role: headline, text: 'BOMB:'}
       type: Label
+    - layout_properties: {grid_position: 'NBDKZW,OMTYWP'}
+      name: bomb_label
+      properties: {}
+      type: Label
     - layout_properties: {grid_position: 'WMQXNI,EVINAM'}
       name: bomb_plot
       properties: {height: 215}
       type: Plot
-    - layout_properties: {grid_position: 'SWJMHY,ROKFBI'}
-      name: label_1
-      properties: {}
-      type: Label
     layout_properties: {grid_position: 'OVFKXU,EWTSWW EFRLOS,VMJFOU'}
     name: bomb_card
     properties: {role: card}
@@ -58,20 +58,20 @@ components:
   - components:
     - layout_properties: {grid_position: 'UCSSKF,WRKMAC'}
       name: headline_4
-      properties: {role: headline, text: 'LAND:'}
+      properties: {role: headline, text: 'Impact:'}
       type: Label
     - layout_properties: {grid_position: 'DTSOMF,NOOPGU'}
-      name: land_plot
+      name: impact_plot
       properties: {height: 183}
       type: Plot
+    - layout_properties: {grid_position: 'EXXQNQ,KXYOZG'}
+      name: impact_map
+      properties: {height: 185}
+      type: GoogleMap
     layout_properties: {grid_position: 'OVFKXU,VBKIJD JYGYHF,PWIQSY'}
     name: card_3
     properties: {role: card}
     type: ColumnPanel
-  - layout_properties: {grid_position: 'OVFKXU,VBKIJD WNJNAK,UYWPSU'}
-    name: map_1
-    properties: {height: 185}
-    type: GoogleMap
   layout_properties: {grid_position: 'BWWMYE,NVOXOK'}
   name: column_panel
   properties: {col_spacing: tiny, col_widths: '{"EWTSWW":40,"VBKIJD":20}'}
