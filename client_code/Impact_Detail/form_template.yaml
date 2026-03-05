@@ -2,7 +2,11 @@ components:
 - event_bindings: {}
   layout_properties: {grid_position: 'ERCJCS,VDVFQI'}
   name: back_button
-  properties: {text: Back to menu}
+  properties:
+    spacing:
+      margin: [null, 0, null, null]
+      padding: [null, 341, null, null]
+    text: Back to menu
   type: Button
 - layout_properties: {grid_position: 'ERCJCS,SKDLDE'}
   name: headline
@@ -68,9 +72,19 @@ components:
     name: card_3
     properties: {role: card}
     type: ColumnPanel
-  layout_properties: {grid_position: 'BWWMYE,NVOXOK'}
+  layout_properties: {grid_position: 'GKIMWD,VZVELB'}
   name: column_panel
-  properties: {col_spacing: tiny, col_widths: '{"EWTSWW":40,"VBKIJD":20}'}
+  properties:
+    col_spacing: tiny
+    col_widths: '{"EWTSWW":40,"VBKIJD":20}'
+    spacing:
+      margin: [null, null, null, 0]
+      padding: [null, null, null, 0]
   type: ColumnPanel
-container: {type: ColumnPanel}
+container:
+  properties:
+    spacing:
+      margin: [null, null, null, 0]
+      padding: [null, 0, null, 0]
+  type: ColumnPanel
 is_package: true
