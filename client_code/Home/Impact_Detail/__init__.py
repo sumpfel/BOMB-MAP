@@ -32,7 +32,8 @@ class Impact_Detail(Impact_DetailTemplate):
     self.init_target_text()
 
   def init_target_text(self):
-    self.target_text.content = f"""Ziel Info:\n\r{self.item['zieltyp_name']}\n\r{self.item['zieltyp_info']}"""
+    self.target_headline.text = f"Ziel: {self.item['zieltyp_name']}"
+    self.target_text.content = f"{self.item['zieltyp_info']}"
   ####
   ####------- War
   ####

@@ -78,7 +78,7 @@ components:
     type: ColumnPanel
   - components:
     - layout_properties: {grid_position: 'OEPUBZ,OKAVCS'}
-      name: headline_3
+      name: target_headline
       properties: {role: headline, text: 'Ziel:'}
       type: Label
     - layout_properties: {grid_position: 'ZRENRH,WCXBMJ'}
