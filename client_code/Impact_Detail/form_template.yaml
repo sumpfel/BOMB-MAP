@@ -21,19 +21,6 @@ components:
         padding: [null, null, null, 0]
     type: Label
   - components:
-    - layout_properties: {grid_position: 'XGDDXL,HWZIUK'}
-      name: bomb_headline
-      properties: {role: headline, text: 'Bombe:'}
-      type: Label
-    - layout_properties: {grid_position: 'TDMKKD,ZYKSIY'}
-      name: bomb_text
-      properties: {}
-      type: RichText
-    layout_properties: {grid_position: 'OVFKXU,EWTSWW EFRLOS,VMJFOU'}
-    name: bomb_card
-    properties: {role: card}
-    type: ColumnPanel
-  - components:
     - layout_properties: {grid_position: 'UCSSKF,WRKMAC'}
       name: headline_4
       properties: {role: headline, text: 'Einschlag:'}
@@ -54,8 +41,21 @@ components:
       name: impact_map
       properties: {height: 277}
       type: GoogleMap
-    layout_properties: {grid_position: 'OVFKXU,EWTSWW YKBGNG,QWTGRT'}
+    layout_properties: {grid_position: 'OVFKXU,EWTSWW'}
     name: impact_card
+    properties: {role: card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'XGDDXL,HWZIUK'}
+      name: bomb_headline
+      properties: {role: headline, text: 'Bombe:'}
+      type: Label
+    - layout_properties: {grid_position: 'TDMKKD,ZYKSIY'}
+      name: bomb_text
+      properties: {}
+      type: RichText
+    layout_properties: {grid_position: 'OVFKXU,VBKIJD LOYRQA,ZGXMVL'}
+    name: bomb_card
     properties: {role: card}
     type: ColumnPanel
   - components:
@@ -72,7 +72,7 @@ components:
       name: war_button
       properties: {text: mehr Infos}
       type: Button
-    layout_properties: {grid_position: 'OVFKXU,VBKIJD'}
+    layout_properties: {grid_position: 'OVFKXU,VBKIJD RYLJGP,HUPBPK'}
     name: card_2
     properties: {role: card}
     type: ColumnPanel

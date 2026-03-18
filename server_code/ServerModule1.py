@@ -35,12 +35,13 @@ def get_impacts_by_war(war_id):
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
     cur.execute("""
-            SELECT 
-                einschlag_id, 
-                name, 
-                latitude, 
-                longitude 
-            FROM bombeneinschlag 
+            SELECT
+                einschlag_id,
+                name,
+                latitude,
+                longitude,
+                COUNT(*) OVER () AS count
+            FROM bombeneinschlag
             WHERE krieg_id = ?
         """, (war_id,))
     return [dict(row) for row in cur.fetchall()]
@@ -56,7 +57,7 @@ def get_impact_details(impact_id):
     cur = conn.cursor()
 
     cur.execute("""
-            SELECT 
+            SELECT
                 -- Basisdaten des Einschlags
                 b.einschlag_id,
                 b.name AS einschlag_name,
@@ -109,9 +110,6 @@ def get_impact_details(impact_id):
 
 @anvil.server.callable
 def get_war_details(war_id):
-  """
-  Ruft alle Details zu einem spezifischen Krieg ab.
-  """
 
   with sqlite3.connect(data_files["bomb_impacts.db"]) as conn:
     conn.row_factory = sqlite3.Row

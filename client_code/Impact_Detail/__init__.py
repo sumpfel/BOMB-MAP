@@ -73,7 +73,8 @@ class Impact_Detail(Impact_DetailTemplate):
     
   def init_bomb_text(self):
     self.bomb_headline.text = "Bombe: " + self.item['waffen_name']
-    self.bomb_text.content = f"""Explosions Kraft: {self.item['waffen_leistung']}\n\rWaffen-Typ: {self.item['waffen_typ']}"""
+    self.bomb_text.content = f"""**Explosions Kraft:** {self.item['waffen_leistung']}
+**Waffen-Typ:** {self.item['waffen_typ']}"""
   ####
   #### ------ Impact
   ####

@@ -75,7 +75,9 @@ class War_Detail(War_DetailTemplate):
 
     if impacts:
       self.map.center = GoogleMap.LatLng(impacts[0]['latitude'], impacts[0]['longitude'])
-      self.map.zoom = 1
+      self.map.zoom = 2
+      text = f"# Aufgezeichnete Bombeneinschläge dieses Konfliktes: {impacts[0]['count']}"
+      self.war_text2.content = text
 
   def open_impact_details(self, impact_id):
     """Navigiert zur Detailansicht des gewählten Einschlags"""

@@ -17,6 +17,6 @@ components:
   properties: {}
   type: FlowPanel
 container:
-  properties: {html: '@theme:standard-page.html'}
+  properties: {html: '', visible: true}
   type: HtmlTemplate
 is_package: true
