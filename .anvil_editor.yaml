@@ -4,8 +4,8 @@ unique_ids:
     theme.css: PICEBX33DCGQNKMKOI5YQ4GVXTRD5POB
   forms:
     Home: NW6BE2DEQDG3UMH4HIR4GBALXUUVMRAF
-    Impact_Detail: '1772618525085184779540575.58466'
-    War_Detail: '1773824541849349643204683.83905'
+    Home.Impact_Detail: '1772618525085184779540575.58466'
+    Home.War_Detail: '1773824541849349643204683.83905'
   modules: {}
   scripts: {}
   server_modules:

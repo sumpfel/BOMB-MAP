@@ -182,4 +182,4 @@ class Impact_Detail(Impact_DetailTemplate):
   @handle("war_button", "click")
   def war_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form('War_Detail', self.impact_id, self.item["krieg_id"])
+    open_form('Home.War_Detail', self.impact_id, self.item["krieg_id"])

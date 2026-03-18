@@ -81,12 +81,12 @@ class War_Detail(War_DetailTemplate):
 
   def open_impact_details(self, impact_id):
     """Navigiert zur Detailansicht des gewählten Einschlags"""
-    open_form('Impact_Detail', impact_id)
+    open_form('Home.Impact_Detail', impact_id)
 
   @handle("back_button", "click")
   def back_button_click(self, **event_args):
     """This method is called when the button is clicked"""
-    open_form("Impact_Detail", self.impact_id)
+    open_form("Home.Impact_Detail", self.impact_id)
 
   @handle("home_button", "click")
   def home_button_click(self, **event_args):

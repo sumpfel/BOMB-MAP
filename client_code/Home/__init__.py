@@ -27,4 +27,4 @@ class Home(HomeTemplate):
 
   def open_details(self, impact_id: int):
 
-    open_form('Impact_Detail',impact_id)
+    open_form('Home.Impact_Detail',impact_id)
