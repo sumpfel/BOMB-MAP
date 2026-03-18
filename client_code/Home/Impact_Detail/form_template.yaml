@@ -70,7 +70,7 @@ components:
     - event_bindings: {}
       layout_properties: {grid_position: 'AWQHFZ,AXMDWW'}
       name: war_button
-      properties: {text: mehr Infos}
+      properties: {font_size: 25, text: '------> mehr Infos <-----', underline: false}
       type: Button
     layout_properties: {grid_position: 'OVFKXU,VBKIJD RYLJGP,HUPBPK'}
     name: card_2
