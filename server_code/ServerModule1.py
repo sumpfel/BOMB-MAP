@@ -29,6 +29,23 @@ def get_bomb_impacts():
     return [dict(row) for row in cur.fetchall()]
 
 @anvil.server.callable
+def get_impacts_by_war(war_id):
+  """Holt alle Einschläge, die zu einem bestimmten Krieg gehören."""
+  with sqlite3.connect(data_files["bomb_impacts.db"]) as conn:
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+    cur.execute("""
+            SELECT 
+                einschlag_id, 
+                name, 
+                latitude, 
+                longitude 
+            FROM bombeneinschlag 
+            WHERE krieg_id = ?
+        """, (war_id,))
+    return [dict(row) for row in cur.fetchall()]
+
+@anvil.server.callable
 def get_impact_details(impact_id):
   """
     Ruft alle Details zu einem spezifischen Bombeneinschlag ab.
@@ -48,6 +65,9 @@ def get_impact_details(impact_id):
                 b.longitude,
                 b.todesopfer,
                 b.verletzte,
+                b.certain_death_radius,
+                b.heavy_injury_radius,
+                b.small_injury_radius,
                 b.beschreibung AS einschlag_beschreibung,
                 
                 -- Informationen zum historischen Kontext (Krieg)
@@ -55,7 +75,9 @@ def get_impact_details(impact_id):
                 k.beginn AS krieg_start,
                 k.ende AS krieg_ende,
                 k.beschreibung AS krieg_beschreibung,
-                k.todesopfer_gesamt AS krieg_tote_insgesamt,
+                k.todesopfer_gesamt AS krieg_tote,
+                k.verletzte_gesamt AS krieg_verletzte,
+                k.krieg_id,
                 
                 -- Geografische Daten
                 l.name AS land_name,
@@ -82,5 +104,36 @@ def get_impact_details(impact_id):
 
     if row:
       # Als Dictionary zurückgeben, damit Anvil-Bindings (self.item) funktionieren
+      return dict(row)
+    return None
+
+@anvil.server.callable
+def get_war_details(war_id):
+  """
+  Ruft alle Details zu einem spezifischen Krieg ab.
+  """
+
+  with sqlite3.connect(data_files["bomb_impacts.db"]) as conn:
+    conn.row_factory = sqlite3.Row
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT 
+            -- Basisdaten des Krieges
+            k.krieg_id,
+            k.name AS krieg_name,
+            k.beginn AS krieg_start,
+            k.ende AS krieg_ende,
+            k.beschreibung AS krieg_beschreibung,
+            k.todesopfer_gesamt AS krieg_tote,
+            k.verletzte_gesamt AS krieg_verletzte
+
+        FROM krieg k
+        WHERE k.krieg_id = ?
+    """, (war_id,))
+
+    row = cur.fetchone()
+
+    if row:
       return dict(row)
     return None

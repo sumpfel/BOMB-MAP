@@ -1,0 +1,46 @@
+components:
+- components:
+  - components:
+    - event_bindings: {}
+      layout_properties: {grid_position: 'GZWZSX,NVCEMQ'}
+      name: back_button
+      properties: {text: -Back-}
+      type: Button
+    - event_bindings: {}
+      layout_properties: {grid_position: 'GZWZSX,VBLSLH'}
+      name: home_button
+      properties: {text: -Home-}
+      type: Button
+    layout_properties: {grid_position: 'OASKRS,JJZIRK'}
+    name: card_1
+    properties: {role: card}
+    type: ColumnPanel
+  - components:
+    - components: []
+      layout_properties: {grid_position: 'ZXHNBL,WJIVEZ'}
+      name: war_text
+      properties: {}
+      type: RichText
+    - layout_properties: {grid_position: 'ZXHNBL,DQZPWC'}
+      name: war_plot
+      properties: {height: 210.58331298828125}
+      type: Plot
+    layout_properties: {grid_position: 'LVQQQH,PXMQQN'}
+    name: card_2
+    properties: {role: card}
+    type: ColumnPanel
+  - components:
+    - layout_properties: {grid_position: 'LOTUHW,BXYRND'}
+      name: map
+      properties: {height: 345.41668701171875}
+      type: GoogleMap
+    layout_properties: {grid_position: 'XJBOSE,QVFNGW'}
+    name: card_3
+    properties: {role: card}
+    type: ColumnPanel
+  layout_properties: {grid_position: 'OYWKSZ,LXMBDC'}
+  name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+container: {type: ColumnPanel}
+is_package: true
